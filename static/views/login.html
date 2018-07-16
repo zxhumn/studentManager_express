@@ -18,6 +18,7 @@
     }
     .code-img {
       height: 34px;
+      cursor:pointer;
     }
 
   </style>
@@ -56,7 +57,7 @@
                   <input type="text" name="code" class="form-control" id="code" placeholder="请输入验证码">
                 </div>
                 <div class="col-sm-4">
-                  <img src="../img/code.PNG" alt="" class="code-img">
+                  <img src="/login/captchaImg" alt="" class="code-img">
                 </div>
               </div>
           
@@ -80,3 +81,11 @@
 <script src="../lib/js/jquery-1.12.4.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../lib/js/bootstrap.min.js"></script>
+<script>
+  $(function(){
+
+    $('.code-img').click(function(){
+      $(this).attr('src',$(this).attr('src')+`?${Math.random()}`);
+    })
+  })
+</script>
